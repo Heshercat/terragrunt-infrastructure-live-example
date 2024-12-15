@@ -39,10 +39,10 @@ remote_state {
   backend = "s3"
   config = {
     encrypt        = true
-    bucket         = "${get_env("TG_BUCKET_PREFIX", "")}terragrunt-example-tf-state-${local.account_name}-${local.aws_region}"
+    bucket         = "terragrunt-run-all"
     key            = "${path_relative_to_include()}/tf.tfstate"
     region         = local.aws_region
-    dynamodb_table = "tf-locks"
+    dynamodb_table = "terraform-locks"
   }
   generate = {
     path      = "backend.tf"
