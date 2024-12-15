@@ -51,13 +51,13 @@ remote_state {
 }
 
 # Configure what repos to search when you run 'terragrunt catalog'
-catalog {
-  urls = [
-    "https://github.com/gruntwork-io/terragrunt-infrastructure-modules-example",
-    "https://github.com/gruntwork-io/terraform-aws-utilities",
-    "https://github.com/gruntwork-io/terraform-kubernetes-namespace"
-  ]
-}
+#catalog {
+#  urls = [
+#    "https://github.com/gruntwork-io/terragrunt-infrastructure-modules-example",
+#    "https://github.com/gruntwork-io/terraform-aws-utilities",
+#    "https://github.com/gruntwork-io/terraform-kubernetes-namespace"
+#  ]
+#}
 
 # ---------------------------------------------------------------------------------------------------------------------
 # GLOBAL PARAMETERS
