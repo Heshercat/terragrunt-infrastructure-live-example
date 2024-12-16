@@ -24,6 +24,22 @@ terraform {
   source = "${include.envcommon.locals.base_source_url}?ref=v0.8.0"
 }
 
+# Add remote example
+remote_state {
+  backend = "s3"
+  config = {
+    encrypt        = true
+    bucket         = "terragrunt-run-all"
+    key            = "${path_relative_to_include()}/tf.tfstate"
+    region         = local.aws_region
+    dynamodb_table = "terraform-locks"
+  }
+  generate = {
+    path      = "backend.tf"
+    if_exists = "overwrite_terragrunt"
+  }
+}
+
 # ---------------------------------------------------------------------------------------------------------------------
 # Override parameters for this environment
 # ---------------------------------------------------------------------------------------------------------------------
