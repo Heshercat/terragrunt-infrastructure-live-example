@@ -36,8 +36,7 @@ EOF
 
 # Configure Terragrunt to automatically store tfstate files in an S3 bucket
 terraform {
-  backend = "s3"
-  config = {
+  backend "s3" {
     encrypt        = true
     bucket         = "terragrunt-run-all"
     key            = "${path_relative_to_include()}/tf.tfstate"
