@@ -43,10 +43,6 @@ terraform {
     region         = local.aws_region
     dynamodb_table = "terraform-locks"
   }
-  generate = {
-    path      = "backend.tf"
-    if_exists = "overwrite_terragrunt"
-  }
 }
 
 # Configure what repos to search when you run 'terragrunt catalog'
