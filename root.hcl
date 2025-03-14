@@ -42,7 +42,7 @@ remote_state {
     bucket         = "alfiia-preview-saas"
     key            = "${path_relative_to_include()}/tf.tfstate"
     region         = local.aws_region
-   // dynamodb_table = "terraform-locks"
+    dynamodb_table = "terraform-locks"
   }
   generate = {
     path      = "backend.tf"
